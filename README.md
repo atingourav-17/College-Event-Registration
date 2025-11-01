@@ -169,24 +169,6 @@ Work continues smoothly 🎉
 6️⃣ Abhishek merges it
 7️⃣ Everyone pulls latest main before continuing
 
-💻 OUR PROJECT STRUCTURE (Optional Setup)
-project/
-│
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── assets/
-│   ├── images/
-│   └── icons/
-└── components/
-    ├── navbar.html
-    ├── carousel.html
-    ├── form.html
-    ├── cards.html
-    └── footer.html
-
 💬 Final Note
 
 This README isn’t just a guide — it’s your map.
