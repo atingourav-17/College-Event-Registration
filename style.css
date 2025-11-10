@@ -9,6 +9,12 @@ section {
   padding: 60px 0;
 }
 
+/* Make navbar links uniform size */
+.navbar-brand,
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+}
+
 /* Card hover effect */
 .card:hover {
   transform: translateY(-5px);
@@ -35,4 +41,3 @@ footer p {
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
-

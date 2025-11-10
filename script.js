@@ -1,4 +1,3 @@
-
 // Auto-fill event name when Apply button is clicked
 document.querySelectorAll('.btn[data-bs-target="#applyModal"]').forEach((btn) => {
   btn.addEventListener('click', (e) => {
@@ -34,6 +33,7 @@ document.getElementById('eventForm').addEventListener('submit', (e) => {
   modal.hide();
 
   alert(`Registration successful for ${eventName}! 🎉`);
+  loadRegistrations(); // Refresh table after new entry
 });
 // 🔹 Preload dummy data if localStorage is empty
 function preloadDummyData() {
@@ -83,8 +83,8 @@ document.getElementById('clearDataBtn').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   preloadDummyData();
   loadRegistrations();
+
+  // Show the new info modal on page load
+  const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
+  infoModal.show();
 });
-
-
-
-
