@@ -1,11 +1,33 @@
 // Auto-fill event name when Apply button is clicked
-document.querySelectorAll('.btn[data-bs-target="#applyModal"]').forEach((btn) => {
+document.querySelectorAll('[data-bs-target="#applyModal"]').forEach(btn => {
   btn.addEventListener('click', (e) => {
-    const eventCard = e.target.closest('.card');
-    const eventName = eventCard.querySelector('.card-title').textContent;
-    document.querySelector('#event').value = eventName;
+    const button = e.currentTarget;               // the button actually clicked
+    const eventCard = button.closest('.card');    // may be null
+    let eventName = '';
+
+    if (eventCard) {
+      const titleEl = eventCard.querySelector('.card-title');
+      eventName = titleEl ? titleEl.textContent.trim() : '';
+    } else {
+      // fallback: prefer a data-event attribute, otherwise use button text
+      eventName = button.dataset.event || button.getAttribute('data-event') || button.textContent.trim();
+      // if button text includes icons or extra text, you might want to clean it further
+    }
+
+    // fill modal input and title (if present)
+    const eventInput = document.querySelector('#event');
+    if (eventInput) {
+      eventInput.value = eventName;
+      eventInput.readOnly = true; // keep it readonly if you don't want manual edits
+    }
+
+    const modalTitle = document.querySelector('#applyModalLabel');
+    if (modalTitle) {
+      modalTitle.textContent = eventName ? `Registering for: ${eventName}` : 'Event Registration';
+    }
   });
 });
+
 
 // Handle form submission and store data in localStorage
 document.getElementById('eventForm').addEventListener('submit', (e) => {
