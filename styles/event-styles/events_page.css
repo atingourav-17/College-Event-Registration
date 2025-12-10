@@ -74,3 +74,21 @@ body {
         padding: 30px;
     }
 }
+
+.back-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    padding: 12px 20px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.back-btn:hover {
+    background-color: #333;
+    cursor: pointer;
+}
